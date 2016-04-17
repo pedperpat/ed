@@ -1,0 +1,37 @@
+Esta práctica trata del juego del ajedrez. No hay que implementarlo entero ni mucho menos. Lo que viene dentro de esta carpeta del repositorio de prácticas, son 3 proyectos del NetBeans, los cuales son:
+
+	* Un proyecto de NetBeans con una librería con todo lo común a la hora de jugar al ajedrez.
+	* Un proyecto para poder jugar al ajedrez en modo consola el cual usa, evidentemente, el primer proyecto aquí descrito.
+	* Un proyecto para poder jugar al ajedrez en modo gráfico que usa el primer proyecto (la librería).
+
+Para poder ejecutar tanto el proyecto de consola como el de desktop, tienes que tener los 3 proyectos abiertos en el NetBeans.
+
+A continuación se relata las cosas que hay que hacer. Están dispuestas en un orden, que a mi modo de ver, es el más favorable para poder avanzar lo más rápido posible, pero no tenéis que seguir el orden que yo propongo, es sólo una sugerencia. Además, para cada enunciado, está puesto los puntos a los que equivale, tened cuidado, pues hay ejercicios que restan puntos. Los enunciados son:
+
+	* +2 puntos por implementar la clase ChessPieceImplementation. Para hacer esto os podéis ayudar de la clase ChessMovementManager (muy recomendado). Con esto ya podéis probar el proyecto en modo consola y deberíais de poder jugar sin problemas.
+	* +1 punto si se comentan todas las funciones de la clase PiecePosition a la perfección, es decir, que esté total y absolutamente claro lo que hacen cada una de sus funciones.
+	* Los caballos no se dibujan bien, de hecho ahora aparecen como círculos. Quien consiga que los caballos salgan como un rectángulo y un triángulo +1 punto.
+	* +2 puntos si se implementa el guardar partida y y cargar una partida en el modo gráfico. Si os fijáis en los java del proyecto, ya hay código por ahí para leer de un archivo y escribir a un archivo. Podéis utilizarlo para implementar saveToFile y loadFromFile de la interfaz ChessBoard. Las sugerencias acerca de cómo atacar este apartado, las podéis preguntar y sugerir en el foro de la práctica 4.
+	* Cuando un usuario en modo gráfico elige una ficha, estaría bien que se pintaran de un color determinado aquellas casillas donde puede moverse la ficha seleccionada, para quien haga esto, +2 puntos. Recomiendo encarecidamente implementar esto, pues puede ayudaros en otras cosas.
+	* +1 punto por arreglar la lógica de la partida en el modo gráfico. Si os fijáis no hay ningún orden, uno puede mover todas las fichas sin orden de blancas/negras.
+	* +1 punto si se utiliza la IA proporcionada (en el proyecto de NetBeans llamado Chess) de alguna manera para que se pueda jugar contra la máquina (aunque sea en modo random).
+	* Por cada bug que se encuentre (y los hay) y se publique en el foro de bugs +3 puntos.
+	 	* OJO!!! Si se publica un bug que no es real, -2 puntos.
+	 	* Sólo se tendrá en cuenta a la primera persona que encuentre el bug para el +3.
+	 	* OJO!!! Si alguien intenta publicar un bug que ya está publicado, -1 puntos.
+	* Si alguien corrobora que algo que se ha publicado como bug es efectivamente un bug +1 puntos
+	 	* Si no era efectivamente un bug, -1 punto.
+	 	* Sólo se tendrá en cuenta a la primera persona que proponga una solución correcta para poner el +1.
+	* Por cada bug en el cual se proponga solución +1 puntos
+	 	* Si la solución no es correcta, -1 punto.
+	 	* Sólo se tendrá en cuenta a la primera persona que proponga una solución correcta para poner el +1.
+	 	* Si se proporciona el código fuente que arregla el bug, +1 punto.
+	* El juego no permite enrocarse, si se consigue +1 punto.
+	* El juego no convierte en damas a los peones cuando llegan al otro extremo, si se consigue +1 punto.
+
+
+Si algún proyecto no compila o me sale alguna excepción mientras se ejecuta, la nota erá de 0.
+
+Si alguien detecta algo raro, o necesita aclaraciones, que lo comente en el foro de esta práctica, ..., que hay para rato.
+
+El modo de entrega ya lo comentaré, no os preocupéis de eso ahora, pero os adelanto que será con github, presumiblemente par el 18 de Abril.
