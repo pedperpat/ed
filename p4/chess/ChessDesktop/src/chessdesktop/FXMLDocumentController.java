@@ -28,7 +28,8 @@ public class FXMLDocumentController implements Initializable {
 	private Label label;
 	@FXML
 	private Canvas canvas;
-	
+        private boolean pieceMoved = true;
+        
 	@FXML
 	private void handleButtonAction(ActionEvent event) {
 		board = new ChessBoardRenderer();
@@ -81,14 +82,27 @@ public class FXMLDocumentController implements Initializable {
 				board.draw(canvas);
 				return;
 			}
-			if (board.getMovingPiece() == null) { // Possibly implementation by turns
+                        // Possibly implementation of turns
+			if (board.getMovingPiece() == null) { 
+                            if((pieceMoved) && (piece.getColor()==ChessPiece.Color.WHITE)){
                                       board.setMovingPiece(piece);
                                       board.draw(canvas);
                                       return;
+                            }
+                            else if((!pieceMoved) && (piece.getColor() == ChessPiece.Color.BLACK)){
+                                board.setMovingPiece(piece);
+                                board.draw(canvas);
+                            }
                         }
 			if (board.movePieceTo(canvas, e.getX(), e.getY())) {
 				board.setMovingPiece(null);
 				board.draw(canvas);
+                                
+                                if(pieceMoved)
+                                    pieceMoved = false;
+                                else
+                                    pieceMoved = true;
+                                    
 				if (!board.containsKing(ChessPiece.Color.BLACK) || !board.containsKing(ChessPiece.Color.WHITE)) {
 					if (!board.containsKing(ChessPiece.Color.BLACK))
 						label.setText("Ganan las blancas");
