@@ -15,6 +15,7 @@ public class ChessBoardRenderer {
 	
 	private final Chess.ChessBoard board = new Chess.ChessBoardImplementation();
 	private Chess.ChessPiece movingPiece;
+        private ChessPiece piece;
 	
 	static private void drawCrown(GraphicsContext aContext, double minX, double minY, double width, double height) {
 		double maxX = minX + width;

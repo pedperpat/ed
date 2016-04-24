@@ -29,6 +29,8 @@ public class FXMLDocumentController implements Initializable {
 	@FXML
 	private Canvas canvas;
         private boolean pieceMoved = true;
+        private ChessPiece piece;
+        private Chess.ChessRandomAI aiTurn;
         
 	@FXML
 	private void handleButtonAction(ActionEvent event) {
@@ -43,7 +45,8 @@ public class FXMLDocumentController implements Initializable {
 		File file = fileChooser.showSaveDialog(null);
 		if (file != null) {
 			Charset charset = Charset.forName("US-ASCII");
-			String s = "hello";
+                            String s = "";
+                        
 			try (BufferedWriter writer = Files.newBufferedWriter(file.toPath(), charset)) {
 				writer.write(s, 0, s.length());
 			} 
@@ -82,7 +85,7 @@ public class FXMLDocumentController implements Initializable {
 				board.draw(canvas);
 				return;
 			}
-                        // Possibly implementation of turns
+                        // Possibly implementation of turns and random AI
 			if (board.getMovingPiece() == null) { 
                             if((pieceMoved) && (piece.getColor()==ChessPiece.Color.WHITE)){
                                       board.setMovingPiece(piece);
@@ -91,6 +94,7 @@ public class FXMLDocumentController implements Initializable {
                             }
                             else if((!pieceMoved) && (piece.getColor() == ChessPiece.Color.BLACK)){
                                 board.setMovingPiece(piece);
+                                //board.setMovingPiece(aiTurn.performNextMovement(board, ChessPiece.Color.BLACK));
                                 board.draw(canvas);
                             }
                         }
